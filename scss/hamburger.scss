@@ -1,0 +1,136 @@
+// demo styles
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 1.428571429;
+}
+
+body {
+  font: 1.6rem/1.5 sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+#hero {
+  background: #333 center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 40rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem
+}
+
+
+
+
+
+
+// vars
+
+$hamburger-dark-color: #000000;
+$hamburger-light-color: #ffffff;
+$hamburger-active-color: $hamburger-dark-color;
+$hamburger-width: 3rem;
+$hamburger-height: 3rem;
+$hamburger-line-width: $hamburger-width;
+$hamburger-line-height: 2px;
+$hamburger-top: 4rem;
+$hamburger-right: 4rem;
+
+// main selector
+
+#hamburger {
+  display: block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  top: $hamburger-top;
+  right: $hamburger-right;
+  width: $hamburger-width;
+  height: $hamburger-height;
+
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+    width: $hamburger-line-width;
+    height: $hamburger-line-height;
+    background: $hamburger-dark-color;
+    position: absolute;
+    right: 0;
+    transform-origin: 50%;
+    transition: all .2s ease;
+  }
+
+  &:before {
+    top: .9rem;
+  }
+
+  &:after {
+    top: 1.9rem;
+    // 1. ux option: expand width on hover
+    width: 2rem;
+  }
+
+  &.on-hero {
+
+    &:before,
+    &:after {
+      background: $hamburger-light-color;
+    }
+  }
+
+  // put here a mq for desktop device only
+
+  &:hover {
+    &:before {
+      // 2. ux option: move y on hover
+      // top: .6rem;
+    }
+
+    &:after {
+      // 2. ux option: move y on hover
+      // top: 2.1rem;
+      width: $hamburger-line-width;
+    }
+  }
+
+  
+
+  &.active {
+
+    &:before,
+    &:after {
+      background-color: $hamburger-active-color;
+      width: $hamburger-line-width;
+    }
+
+    &:before {
+      top: 1.5rem;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      top: 1.5rem;
+      transform: rotate(-45deg);
+    }
+  }
+}
