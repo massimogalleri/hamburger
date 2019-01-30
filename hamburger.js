@@ -3,7 +3,7 @@
 var _is_nav_open = false,
     _body = document.querySelector('body'),
     _window = document.documentElement,
-    _hero = document.getElementById('hero');
+    _hero = document.getElementById('hero'),
     _hamburger = document.getElementById('hamburger');
 
 
