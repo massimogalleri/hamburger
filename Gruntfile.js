@@ -6,7 +6,6 @@ module.exports = function(grunt) {
             hamburger: {
                 options: {
                     style: 'compressed',
-                    noCache: true
                 },
                 files: {
                     'hamburger.css': 'scss/hamburger.scss',
