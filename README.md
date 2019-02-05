@@ -5,6 +5,3 @@ Open and close icon on click + change icon color scrolling after hero height.
 ## setup
 `npm install`
 `grunt`
-
-### live
-https://mg-hamburger.netlify.com/
