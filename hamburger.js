@@ -31,7 +31,7 @@
     // scroll function
 
     function _window_scroll() {
-        if (_window.scrollTop < _hero.clientHeight - _hamburger.clientHeight - _hamburger.offsetTop) {
+        if (window.pageYOffset < _hero.getBoundingClientRect().height - _hamburger._hero.getBoundingClientRect().height - _hamburger._hero.getBoundingClientRect().top) {
             _hamburger.classList.add('on-hero');
         } else {
             _hamburger.classList.remove('on-hero');
